@@ -9,11 +9,11 @@ export const app = express();
 connnectDB();
 
 app.use(express.json());
-cors({
+app.use(cors({
   origin: [process.env.FRONTEND_URL],
   methods: ["POST", "GET", "PUT", "DELETE"],
   credentials: true,
-});
+}));
 
 config({
   path: "./Data/config.env",
